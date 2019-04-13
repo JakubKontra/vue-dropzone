@@ -140,7 +140,7 @@ export default {
         if(vm.isS3OverridesServerPropagation){
           var xmlResponse = (new window.DOMParser()).parseFromString(response, "text/xml");
           var s3ObjectLocation = xmlResponse.firstChild.children[0].innerHTML;
-          var s3ObjectKey = xmlResponse.firstChild.children[1].innerHTML;
+          var s3ObjectKey = xmlResponse.firstChild.children[2].innerHTML;
           vm.$emit('vdropzone-s3-upload-success', { location: s3ObjectLocation, key: s3ObjectKey });
         }
           if (vm.wasQueueAutoProcess)
